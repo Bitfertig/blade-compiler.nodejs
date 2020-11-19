@@ -1,3 +1,6 @@
+ATTENTION: FORKED REPO, NOT READY FOR PRODUCTION!
+
+
 # Laravel Blade Parser
 
 [![Build Status](https://travis-ci.org/pbelyaev/laravel-blade-compiler.svg?branch=master)](https://travis-ci.org/pbelyaev/laravel-blade-compiler)
