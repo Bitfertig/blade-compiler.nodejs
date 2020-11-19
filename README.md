@@ -1,12 +1,9 @@
-ATTENTION: FORKED REPO, NOT READY FOR PRODUCTION!
-
-
-# Blade Parser
+# Blade Compiler
 
 This package compiles blade templates to HTML.
- 
+
 ## Installation
- 
+
 Via NPM:
 ```console
 $ npm install @bitfertig/blade-compiler.nodejs
@@ -19,7 +16,7 @@ Require the package:
 var bladeCompiler = require('@bitfertig/blade-compiler.nodejs');
 ```
 
-Then you can use the package like so:
+Then you can use the package:
 ```js
 var compiledHTML = bladeCompiler({ folder: './src', file: '/index' });
 ```
@@ -37,3 +34,5 @@ var compiledHTML = bladeCompiler({ folder: './src', file: '/index' });
 
 ## Author
 Aurelian Hermand, www.bitfertig.de
+
+Cloned from https://github.com/pbelyaev/laravel-blade-compiler
