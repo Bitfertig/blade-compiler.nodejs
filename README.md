@@ -13,9 +13,32 @@ $ npm install @bitfertig/blade-compiler.nodejs
 
 Require the package and compile a blade file:
 ```js
+var prop = { title: 'MyTitle' }; // Data
 var bladeCompiler = require('@bitfertig/blade-compiler.nodejs');
 var compiledHTML = bladeCompiler({ folder: './src', file: '/index' });
 console.log(compiledHTML);
+```
+
+./src/index.blade.html
+```html
+<html>
+    <head></head>
+    <body>
+        @include('partials.header')
+    </body>
+</html>
+```
+
+./src/partials/header.blade.html
+```html
+<html>
+    <head>
+        <title>{{ prop.title }}</title>
+    </head>
+    <body>
+        @include('partials.header')
+    </body>
+</html>
 ```
 
 ## Options
