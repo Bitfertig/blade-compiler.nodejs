@@ -21,22 +21,18 @@ var bladeCompiler = require('@bitfertig/blade-compiler.nodejs');
 
 Then you can use the package like so:
 ```js
-var compiledHTML = bladeCompiler({
-    extension: '.blade.html',
-    folder: './src/',
-    path: './src/index.blade.html'
-});
+var compiledHTML = bladeCompiler({ folder: './src', file: '/index' });
 ```
 
 ## Options
 
 | Name | Type | Default value | Description |
 |---|---|---|---|
-| extension | string | .blade.html | Blade file extension |
-| extends | boolean | true | Enable/disable compiling @extends directives |
-| folder | string | ./src/views | Path to the views directory |
 | encoding | string | utf8 | Blade templates encoding |
-| path | string | ./src/views/welcome.blade.php | Path to the compiled blade template file |
+| extends | boolean | true | Enable/disable compiling @extends directives |
+| folder | string | ./src | Path to the views directory |
+| file | string | /index | Path to the compiled blade template file |
+| extension | string | .blade.html | Blade file extension |
 
 
 ## Author
