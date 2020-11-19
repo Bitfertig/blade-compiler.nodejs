@@ -1,7 +1,7 @@
-const fs    = require('fs'),
-      path  = require('path');
+const fs = require('fs');
+const path = require('path');
 
-class LaravelBladeParser
+class BladeParser
 {
     /**
      * @param options
@@ -10,12 +10,14 @@ class LaravelBladeParser
     {
         this.html = "";
         this.defaultOptions = {
-            extension: 'html',
+            extension: '.blade.html',
             folder: './src/views',
-            path: './src/views/index.blade.html',
+            file: '/index',
             extends: true,
             regex: {
                 comments: /\{\{\-\-.*\-\-\}\}/gi,
+
+                variables: /\{\{(.*)\}\}/gi,
 
                 include: /\@include\(\s*[\'\"]([^\[\]\'\"]*)[\'\"]\s*(?:(?:.*[^\s\)])\s*)*\s*\)/gi,
 
@@ -49,7 +51,7 @@ class LaravelBladeParser
      */
     _init()
     {
-        this.html = this._compile(this._getFileContent(this.options.path));
+        this.html = this._compile(this._getFileContent(this.options.folder + this.options.file + this.options.extension));
     }
 
     /**
@@ -68,7 +70,7 @@ class LaravelBladeParser
         // @extends directive
         if (this.options.extends) {
             content = content.replace(this.options.regex.extends, (match, value) => {
-                let filePath = path.join(this.options.folder, value.replace(/\./gi, "/") + '.blade.'+this.options.extension);
+                let filePath = path.join(this.options.folder, value.replace(/\./gi, "/") + this.options.extension);
 
                 return this._getFileContent(filePath);
             });
@@ -131,6 +133,12 @@ class LaravelBladeParser
             return sections[key] == undefined ? "" : sections[key];
         });
 
+        
+        // replace variables
+        content = content.replace(this.options.regex.variables, (match, bracket, char_position, content) => {
+            return '${'+ bracket +'}';
+        });
+
         return content;
     }
 
@@ -142,7 +150,7 @@ class LaravelBladeParser
     _compileIncludes(html)
     {
         return html.replace(this.options.regex.include, (match, value) => {
-            let filePath = path.join(this.options.folder, value.replace(/\./gi, "/") + '.blade.'+this.options.extension),
+            let filePath = path.join(this.options.folder, value.replace(/\./gi, "/") + this.options.extension),
                 html = this._getFileContent(filePath);
 
             return this._compileIncludes(html);
@@ -161,4 +169,4 @@ class LaravelBladeParser
     }
 }
 
-module.exports = options => new LaravelBladeParser(options).getHTML();
+module.exports = options => new BladeParser(options).getHTML();
