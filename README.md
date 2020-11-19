@@ -3,7 +3,7 @@ ATTENTION: FORKED REPO, NOT READY FOR PRODUCTION!
 
 # Blade Parser
 
-This package compile blade templates to HTML.
+This package compiles blade templates to HTML.
  
 ## Installation
  
