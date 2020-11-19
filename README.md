@@ -11,14 +11,11 @@ $ npm install @bitfertig/blade-compiler.nodejs
 
 ## Usage
 
-Require the package:
+Require the package and compile a blade file:
 ```js
 var bladeCompiler = require('@bitfertig/blade-compiler.nodejs');
-```
-
-Then you can use the package:
-```js
 var compiledHTML = bladeCompiler({ folder: './src', file: '/index' });
+console.log(compiledHTML);
 ```
 
 ## Options
