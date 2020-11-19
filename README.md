@@ -1,14 +1,14 @@
 ATTENTION: FORKED REPO, NOT READY FOR PRODUCTION!
 
 
-# Laravel Blade Parser
+# Blade Parser
 
 [![Build Status](https://travis-ci.org/pbelyaev/laravel-blade-compiler.svg?branch=master)](https://travis-ci.org/pbelyaev/laravel-blade-compiler)
 [![NPM Downloads](https://img.shields.io/npm/dt/laravel-blade-compiler.svg)](https://www.npmjs.com/package/laravel-blade-compiler)
 [![NPM Version](https://img.shields.io/npm/v/laravel-blade-compiler.svg)](https://www.npmjs.com/package/laravel-blade-compiler)
 [![NPM License](https://img.shields.io/npm/l/laravel-blade-compiler.svg)](https://www.npmjs.com/package/laravel-blade-compiler)
 
-This package compile laravel blade templates to HTML.
+This package compile blade templates to HTML.
  
 ## Installation
  
@@ -26,7 +26,7 @@ var bladeCompiler = require('@bitfertig/blade-compiler');
 
 Then you can use the package like so:
 ```js
-var compiledHTML = laravelBladeCompiler({
+var compiledHTML = bladeCompiler({
     extension: 'html',
     folder: 'path/to/views/folder',
     path: 'path/to/template.blade.html'
