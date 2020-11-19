@@ -14,7 +14,7 @@ This package compile laravel blade templates to HTML.
  
  or via NPM:
  ```console
- $ npm install laravel-blade-compiler
+ $ npm install @bitfertig/blade-compiler
  ```
 
 ## Usage
