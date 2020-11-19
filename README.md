@@ -12,7 +12,7 @@ This package compile blade templates to HTML.
  
 ## Installation
  
- or via NPM:
+ Via NPM:
  ```console
  $ npm install @bitfertig/blade-compiler
  ```
