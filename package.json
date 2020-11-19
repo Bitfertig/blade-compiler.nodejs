@@ -1,6 +1,6 @@
 {
-  "name": "laravel-blade-compiler",
-  "version": "1.0.10",
+  "name": "@bitfertig/blade-compiler",
+  "version": "1.0.0",
   "description": "NPM Package that compile Blade template language to HTML",
   "main": "index.js",
   "scripts": {
@@ -14,9 +14,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/pbelyaev/laravel-blade-compiler.git"
+    "url": "https://github.com/Bitfertig/blade-compiler.git"
   },
-  "author": "Pavel Belyaev",
+  "author": "Aurelian Hermand",
+  "contributor": "Pavel Belyaev",
   "license": "MIT",
   "devDependencies": {
     "ava": "^0.17.0"
