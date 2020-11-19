@@ -10,8 +10,9 @@ class LaravelBladeParser
     {
         this.html = "";
         this.defaultOptions = {
-            folder: './resources/views',
-            path: './resources/views/welcome.blade.php',
+            extension: 'html',
+            folder: './src/views',
+            path: './src/views/index.blade.html',
             extends: true,
             regex: {
                 comments: /\{\{\-\-.*\-\-\}\}/gi,
@@ -67,7 +68,7 @@ class LaravelBladeParser
         // @extends directive
         if (this.options.extends) {
             content = content.replace(this.options.regex.extends, (match, value) => {
-                let filePath = path.join(this.options.folder, value.replace(/\./gi, "/") + '.blade.php');
+                let filePath = path.join(this.options.folder, value.replace(/\./gi, "/") + '.blade.'+this.options.extension);
 
                 return this._getFileContent(filePath);
             });
@@ -141,7 +142,7 @@ class LaravelBladeParser
     _compileIncludes(html)
     {
         return html.replace(this.options.regex.include, (match, value) => {
-            let filePath = path.join(this.options.folder, value.replace(/\./gi, "/") + '.blade.php'),
+            let filePath = path.join(this.options.folder, value.replace(/\./gi, "/") + '.blade.'+this.options.extension),
                 html = this._getFileContent(filePath);
 
             return this._compileIncludes(html);
