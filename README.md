@@ -9,10 +9,6 @@ This package compile laravel blade templates to HTML.
  
 ## Installation
  
- Via Yarn:
- ```console
- $ yarn add laravel-blade-compiler
- ```
  or via NPM:
  ```console
  $ npm install laravel-blade-compiler
@@ -22,14 +18,15 @@ This package compile laravel blade templates to HTML.
 
 Require the package like so:
  ```js
-var laravelBladeCompiler = require('laravel-blade-compiler');
+var bladeCompiler = require('@bitfertig/blade-compiler');
 ```
 
 Then you can use the package like so:
 ```js
 var compiledHTML = laravelBladeCompiler({
+    extension: 'html',
     folder: 'path/to/views/folder',
-    path: 'path/to/template.blade.php'
+    path: 'path/to/template.blade.html'
 });
 ```
 
