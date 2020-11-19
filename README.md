@@ -3,33 +3,28 @@ ATTENTION: FORKED REPO, NOT READY FOR PRODUCTION!
 
 # Blade Parser
 
-[![Build Status](https://travis-ci.org/pbelyaev/laravel-blade-compiler.svg?branch=master)](https://travis-ci.org/pbelyaev/laravel-blade-compiler)
-[![NPM Downloads](https://img.shields.io/npm/dt/laravel-blade-compiler.svg)](https://www.npmjs.com/package/laravel-blade-compiler)
-[![NPM Version](https://img.shields.io/npm/v/laravel-blade-compiler.svg)](https://www.npmjs.com/package/laravel-blade-compiler)
-[![NPM License](https://img.shields.io/npm/l/laravel-blade-compiler.svg)](https://www.npmjs.com/package/laravel-blade-compiler)
-
 This package compile blade templates to HTML.
  
 ## Installation
  
- Via NPM:
- ```console
- $ npm install @bitfertig/blade-compiler
- ```
+Via NPM:
+```console
+$ npm install @bitfertig/blade-compiler.nodejs
+```
 
 ## Usage
 
-Require the package like so:
- ```js
-var bladeCompiler = require('@bitfertig/blade-compiler');
+Require the package:
+```js
+var bladeCompiler = require('@bitfertig/blade-compiler.nodejs');
 ```
 
 Then you can use the package like so:
 ```js
 var compiledHTML = bladeCompiler({
-    extension: 'html',
-    folder: 'path/to/views/folder',
-    path: 'path/to/template.blade.html'
+    extension: '.blade.html',
+    folder: 'src/',
+    path: 'src/index.blade.html'
 });
 ```
 
@@ -37,7 +32,12 @@ var compiledHTML = bladeCompiler({
 
 | Name | Type | Default value | Description |
 |---|---|---|---|
+| extension | string | .blade.html | Blade file extension |
 | extends | boolean | true | Enable/disable compiling @extends directives |
 | folder | string | ./resources/views | Path to the views directory |
 | encoding | string | utf8 | Blade templates encoding |
 | path | string | ./resources/views/welcome.blade.php | Path to the compiled blade template file |
+
+
+## Author
+Aurelian Hermand, www.bitfertig.de
