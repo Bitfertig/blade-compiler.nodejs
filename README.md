@@ -45,7 +45,19 @@ console.log(compiledHTML);
 | extension | string | .blade.html | Blade file extension |
 
 
+
+
+
 ## Author
 Aurelian Hermand, www.bitfertig.de
 
 Cloned from https://github.com/pbelyaev/laravel-blade-compiler
+
+### Some commands
+
+```bash
+# Publishing initial npm package
+npm publish --access public
+# Publishing npm versions after changing version in package.json
+npm publish
+```
