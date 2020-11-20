@@ -1,6 +1,6 @@
 {
   "name": "@bitfertig/blade-compiler.nodejs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "NPM package that compile blade templates to HTML",
   "main": "index.js",
   "scripts": {
