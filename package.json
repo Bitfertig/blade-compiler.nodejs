@@ -1,7 +1,7 @@
 {
   "name": "@bitfertig/blade-compiler.nodejs",
   "version": "1.0.0",
-  "description": "NPM Package that compile Blade template language to HTML",
+  "description": "NPM package that compile blade templates to HTML",
   "main": "index.js",
   "scripts": {
     "test": "ava"
@@ -10,11 +10,12 @@
     "blade",
     "compiler",
     "laravel",
-    "template"
+    "template",
+    "parser"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Bitfertig/blade-compiler.git"
+    "url": "https://github.com/Bitfertig/blade-compiler.nodejs.git"
   },
   "author": "Aurelian Hermand",
   "contributor": "Pavel Belyaev",
